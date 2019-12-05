@@ -1,12 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const curso = {
-  "title": "React desde cero",
-  "image": "https://wallpapercave.com/wp/Q89pEav.jpg",
-  "price": "50usd"
-}
-
 const Curso = ({title, image, price, profesor}) => (
   <article class="card">
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">      
@@ -20,7 +14,7 @@ const Curso = ({title, image, price, profesor}) => (
         { `El profesor es: ${profesor}` }
       </div>     
       <div className="s-main-center">
-        <a className="button--ghost-alert button--tiny" href="#">{ `$ ${price} USD` }</a>
+        <a className="button--ghost-alert button--tiny" href="https://www.edte.com">{ `$ ${price} USD` }</a>
       </div>
     </div>
   </article>
