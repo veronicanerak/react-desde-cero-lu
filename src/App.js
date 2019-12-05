@@ -4,7 +4,6 @@ import Curso from "./Curso"
 import Banner from "./Banner"
 import Formulario from "./Formulario"
 
-
 const cursos = [
   {
     "title": "React desde cero",
@@ -36,9 +35,9 @@ const cursos = [
 const App = () => (
 <>
   <Banner />
-  <Formulario name="alberto Bounjem" email="alberto.bou@gmail.com" />
+  <Formulario name="alberto Bounjem" email="alberto.bou@gmail.com" form_name="Contact Us" />
 
-<div className="ed-grid m-grid-3">  
+  <div className="ed-grid m-grid-3">  
     {
       cursos.map( curso => <Curso title={curso.title} image={curso.image} price={curso.price} profesor={curso.profesor} /> )      
     }

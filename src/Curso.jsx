@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Curso = ({title, image, price, profesor}) => (
-  <article class="card">
+  <article className="card">
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">      
       <img src={image} alt={ title } />
     </div>

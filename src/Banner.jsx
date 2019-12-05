@@ -8,7 +8,7 @@ const Banner = () => (
         <div className="main-banner__data s-center">
           <p className="t2 s-mb-0">Christmas Time</p>
           <p> My favorite time of the year </p>
-          <a href="http://www.google.com" class="button">Smile</a>
+          <a href="http://www.google.com" className="button">Smile</a>
         </div>
       </div>
     </div>
