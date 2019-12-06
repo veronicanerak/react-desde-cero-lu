@@ -70,15 +70,15 @@ class Formulario extends Component {
 
         this.intervalDate = setInterval(()=>{
             this.changeDate()
-            console.log(new Date())
+            //console.log(new Date())
         }, 1000)
     }
 
     // info already loaded on the DOM
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps)
-        console.log(prevState)
-        console.log("========")
+        //console.log(prevProps)
+        //console.log(prevState)
+        //console.log("========")
     }
 
     componentWillUnmount() {
