@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 import "../styles/styles.scss"
 import Form from "./Pages/Form"
-import CourseGrid from './Organisms/CourseGrid';
+import Courses from './Pages/Courses';
 import CourseFullView from "./Pages/CourseFullView"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import MainMenu from './Organisms/MainMenu'
@@ -15,7 +15,7 @@ const App = () => (
     <Switch>
       <Route path="/" exact component= { Home} />
       <Route path="/courses/:course_id" component={ CourseFullView } />
-      <Route path="/courses" component= { CourseGrid } />      
+      <Route path="/courses" component= { Courses } />
       <Route path="/history/:history_id" component= { HistoryPage } />
       <Route path="/history" component= { HistoryPage } />
       <Route path="/users" component= { Users } />
