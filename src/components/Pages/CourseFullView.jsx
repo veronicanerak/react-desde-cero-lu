@@ -1,49 +1,35 @@
-import React from "react"
+import React, { useState } from "react"
 
-const courses = [
-    {
-      "id": 1,
-      "title": "React desde cero",
-      "image": "https://wallpapercave.com/wp/Q89pEav.jpg",
-      "price": 30,
-      "professor": "Beto Quiroga"
-    }, 
-    {
-      "id": 2,
-      "title": "HTML desde cero",
-      "image": "https://marketingweek.imgix.net/content/uploads/2018/11/23153217/christmas.png",
-      "price": 50,
-      "professor": "Josue Martinez"
-    }, 
-    {
-      "id": 3,
-      "title": "Drupal desde cero",
-      "image": "https://image.shutterstock.com/image-photo/decorated-christmas-tree-on-blurred-260nw-1201088539.jpg",
-      "price": 10,
-      "professor": "Alexyis Lozada"
-    },
-    {
-      "id": 4,
-      "title": "CSS desde cero",
-      "image": "https://cdn.pixabay.com/photo/2014/12/21/07/50/christmas-card-574742__340.jpg",
-      "price": 60,
-      "professor": "Alvaro Felipe"
-    }
-]
+
 
 // match => to get the params comming from the path URL
 const CourseFullView = ({ match }) => {
 
-    const CurrentCourse = courses.filter( course => course.id === parseInt(match.params.course_id) )[0]
+    const [course_state, setState] = useState({  // state= it's the state, setState = it's the callback, we are saving in an array [ attrib1, attrib2]
+      id: 1,
+      title: "React desde cero",
+      image: "https://wallpapercave.com/wp/Q89pEav.jpg",
+      price: 30,
+      professor: "Beto Quiroga"
+    })
+    
+    // console.log(course_state);
+    const changeCourseTitle = (text) => { //In order to update the state (course_state) setState has to be used
+      setState({
+        ...course_state, // recover the status (course_state), only title attribute is overwritten.
+        title: text
+      })
+    }
 
     return (
         <div className="ed-grid m-grid-3">
             {
-                CurrentCourse ? (
+                course_state ? (
                     <>
-                        <h1 className="m-cols-3">Course Name: { CurrentCourse.title }</h1>
-                        <img className="m-cols-1" src={ CurrentCourse.image } alt= { CurrentCourse.title } />
-                        <p className="m-cols-2">Professor: { CurrentCourse.professor }</p>
+                        <h1 className="m-cols-3">Course Name: { course_state.title }</h1>
+                        <img className="m-cols-1" src={ course_state.image } alt= { course_state.title } />
+                        <p className="m-cols-2">Professor: { course_state.professor }</p>
+                        <button onClick={ changeCourseTitle.bind(this, "Go desde cero") }>Change Course Title</button>
                     </>
                 )
                 : (
