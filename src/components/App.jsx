@@ -8,6 +8,7 @@ import MainMenu from './Organisms/MainMenu'
 import HistoryPage from './Pages/HistoryPage';
 import Home from './Pages/Home';
 import Users from './Pages/Users';
+import CustomHooksExample from './Pages/CustomHooksExample';
 
 const App = () => (
   <Router>
@@ -20,6 +21,7 @@ const App = () => (
       <Route path="/history" component= { HistoryPage } />
       <Route path="/users" component= { Users } />
       <Route path="/contact" component= { () => <Form form_name="Contact Us" /> } />
+      <Route path="/custom-hooks" component= { CustomHooksExample } />
       <Route component={()=> (
         <div className="ed-grid">
           <h1>Error 404</h1>
