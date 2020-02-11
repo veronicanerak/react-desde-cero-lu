@@ -1,10 +1,13 @@
 import React from "react"
 import useFetch from "../CustomHooks/useFetch"
+import useCounter from "../CustomHooks/useCounter"
 
 const CustomHooksExample = () => {
 
     const users = useFetch('https://jsonplaceholder.typicode.com/users', [])
     const posts = useFetch('https://jsonplaceholder.typicode.com/posts', [])
+    const counterOne = useCounter()
+    const counterTwo = useCounter()
 
     return (
         <div className="data">
@@ -16,7 +19,7 @@ const CustomHooksExample = () => {
                     <li className="user-row" key={user.id}>{user.name}</li>
                 ))}
             </ul>
-            
+
             <h3>Post List</h3>
             <ul className="post-list">
                 {posts.loading && <p>Loading...</p>}
@@ -24,6 +27,24 @@ const CustomHooksExample = () => {
                     <li className="post-row" key={post.id}>{post.title}</li>
                 ))}
             </ul>
+
+            <h3>Counter Custom Hook</h3>
+            <div className="counter-data">                
+                {counterOne.count}
+                <br />
+                <button onClick={counterOne.increase}>Add Counter</button>
+                <button onClick={counterOne.decrease}>Decrease Counter</button>
+                <br />
+                <h4>Reusing same hook:</h4>
+                {counterTwo.count}
+                <br />
+                <button onClick={counterTwo.increase}>Add Counter</button>
+                <button onClick={counterTwo.decrease}>Decrease Counter</button>
+                <br />                
+                <br />
+                <br />
+                <br />
+            </div>
         </div>
     )    
 }
