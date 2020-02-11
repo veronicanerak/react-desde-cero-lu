@@ -1,5 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
+import useCourse from "../CustomHooks/useCourse"
 
 
 
@@ -17,16 +18,10 @@ const CourseFullView = ({ match }) => {
   */
 
   // Creating different states
-  const [course_state, setState] = useState({}) // Creating a state called course_state with empty object
-  const [comment, setComment] = useState("No comments yet.")  // Creating a state called comment with a string
+  //const [course_state, setState] = useState({}) // Creating a state called course_state with empty object
+  const [comment, setComment] = useState("No comments yet.")  // Creating a state called comment with a string  
 
-  useEffect(() => {
-    //console.log("Usinng useEffect hook");
-    //axios.get('https://my-json-server.typicode.com/veronicanerak/json-db/cursos/4')  static
-    //console.log(match.params)
-    axios.get(`https://my-json-server.typicode.com/veronicanerak/json-db/cursos/${match.params.course_id}`) //dynamic using template string
-      .then(response => setState(response.data))
-  }, []) // [] empty as second parameter to let the component knows that this component will be updated only the first time. It emuluates the componentDidMount which runs only the first time.   
+  const course_state = useCourse(match.params.course_id)
 
   // console.log(course_state);
   /* Commented for learning reasons
